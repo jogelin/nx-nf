@@ -29,6 +29,9 @@ dependencies:
   '@angular/router':
     specifier: ~17.1.0
     version: 17.1.3(@angular/common@17.1.3)(@angular/core@17.1.3)(@angular/platform-browser@17.1.3)(rxjs@7.8.1)
+  es-module-shims:
+    specifier: ^1.5.12
+    version: 1.8.3
   rxjs:
     specifier: ~7.8.0
     version: 7.8.1
@@ -7657,6 +7660,10 @@ packages:
   /es-module-lexer@1.4.1:
     resolution: {integrity: sha512-cXLGjP0c4T3flZJKQSuziYoq7MlT+rnvfZjfp7h+I7K9BNX54kP9nyWvdbwjQ4u1iWbOL4u96fgeZLToQlZC7w==}
     dev: true
+
+  /es-module-shims@1.8.3:
+    resolution: {integrity: sha512-NOE2WomYkoXeae8FcwPwZApxDwKerEWGOiqNo/P2JCBkJgKCLA5+PMZs8sr/1SPk9a8E+hUE9Wc+YZyGEiWHkw==}
+    dev: false
 
   /esbuild-wasm@0.19.11:
     resolution: {integrity: sha512-MIhnpc1TxERUHomteO/ZZHp+kUawGEc03D/8vMHGzffLvbFLeDe6mwxqEZwlqBNY7SLWbyp6bBQAcCen8+wpjQ==}
