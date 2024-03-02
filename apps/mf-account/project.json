@@ -1,0 +1,72 @@
+{
+  "name": "mf-account",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "nx-nf",
+  "sourceRoot": "apps/mf-account/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/mf-account",
+        "index": "apps/mf-account/src/index.html",
+        "browser": "apps/mf-account/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/mf-account/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/mf-account/src/favicon.ico",
+          "apps/mf-account/src/assets"
+        ],
+        "styles": ["apps/mf-account/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "port": 4203
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "mf-account:build:production"
+        },
+        "development": {
+          "buildTarget": "mf-account:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "mf-account:build"
+      }
+    }
+  }
+}
