@@ -7,17 +7,56 @@
   "tags": [],
   "targets": {
     "build": {
+      "executor": "@angular-architects/native-federation:build",
+      "options": {},
+      "configurations": {
+        "production": {
+          "target": "mf-home:esbuild:production"
+        },
+        "development": {
+          "target": "mf-home:esbuild:development",
+          "dev": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-architects/native-federation:build",
+      "options": {
+        "target": "mf-home:serve-original:development",
+        "rebuildDelay": 0,
+        "dev": true,
+        "port": 0
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "mf-home:build"
+      }
+    },
+    "esbuild": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/mf-home",
         "index": "apps/mf-home/src/index.html",
         "browser": "apps/mf-home/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js",
+          "es-module-shims"
+        ],
         "tsConfig": "apps/mf-home/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/mf-home/src/favicon.ico", "apps/mf-home/src/assets"],
-        "styles": ["apps/mf-home/src/styles.scss"],
+        "assets": [
+          "apps/mf-home/src/favicon.ico",
+          "apps/mf-home/src/assets"
+        ],
+        "styles": [
+          "apps/mf-home/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -44,26 +83,20 @@
       },
       "defaultConfiguration": "production"
     },
-    "serve": {
+    "serve-original": {
       "executor": "@angular-devkit/build-angular:dev-server",
       "options": {
         "port": 4201
       },
       "configurations": {
         "production": {
-          "buildTarget": "mf-home:build:production"
+          "buildTarget": "mf-home:esbuild:production"
         },
         "development": {
-          "buildTarget": "mf-home:build:development"
+          "buildTarget": "mf-home:esbuild:development"
         }
       },
       "defaultConfiguration": "development"
-    },
-    "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
-      "options": {
-        "buildTarget": "mf-home:build"
-      }
     }
   }
 }
