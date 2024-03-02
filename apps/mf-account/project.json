@@ -7,20 +7,56 @@
   "tags": [],
   "targets": {
     "build": {
+      "executor": "@angular-architects/native-federation:build",
+      "options": {},
+      "configurations": {
+        "production": {
+          "target": "mf-account:esbuild:production"
+        },
+        "development": {
+          "target": "mf-account:esbuild:development",
+          "dev": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-architects/native-federation:build",
+      "options": {
+        "target": "mf-account:serve-original:development",
+        "rebuildDelay": 0,
+        "dev": true,
+        "port": 0
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "mf-account:build"
+      }
+    },
+    "esbuild": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/mf-account",
         "index": "apps/mf-account/src/index.html",
         "browser": "apps/mf-account/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js",
+          "es-module-shims"
+        ],
         "tsConfig": "apps/mf-account/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/mf-account/src/favicon.ico",
           "apps/mf-account/src/assets"
         ],
-        "styles": ["apps/mf-account/src/styles.scss"],
+        "styles": [
+          "apps/mf-account/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -47,26 +83,20 @@
       },
       "defaultConfiguration": "production"
     },
-    "serve": {
+    "serve-original": {
       "executor": "@angular-devkit/build-angular:dev-server",
       "options": {
         "port": 4203
       },
       "configurations": {
         "production": {
-          "buildTarget": "mf-account:build:production"
+          "buildTarget": "mf-account:esbuild:production"
         },
         "development": {
-          "buildTarget": "mf-account:build:development"
+          "buildTarget": "mf-account:esbuild:development"
         }
       },
       "defaultConfiguration": "development"
-    },
-    "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
-      "options": {
-        "buildTarget": "mf-account:build"
-      }
     }
   }
 }
