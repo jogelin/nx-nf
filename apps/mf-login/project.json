@@ -7,17 +7,56 @@
   "tags": [],
   "targets": {
     "build": {
+      "executor": "@angular-architects/native-federation:build",
+      "options": {},
+      "configurations": {
+        "production": {
+          "target": "mf-login:esbuild:production"
+        },
+        "development": {
+          "target": "mf-login:esbuild:development",
+          "dev": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-architects/native-federation:build",
+      "options": {
+        "target": "mf-login:serve-original:development",
+        "rebuildDelay": 0,
+        "dev": true,
+        "port": 0
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "mf-login:build"
+      }
+    },
+    "esbuild": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/mf-login",
         "index": "apps/mf-login/src/index.html",
         "browser": "apps/mf-login/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js",
+          "es-module-shims"
+        ],
         "tsConfig": "apps/mf-login/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/mf-login/src/favicon.ico", "apps/mf-login/src/assets"],
-        "styles": ["apps/mf-login/src/styles.scss"],
+        "assets": [
+          "apps/mf-login/src/favicon.ico",
+          "apps/mf-login/src/assets"
+        ],
+        "styles": [
+          "apps/mf-login/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -44,26 +83,20 @@
       },
       "defaultConfiguration": "production"
     },
-    "serve": {
+    "serve-original": {
       "executor": "@angular-devkit/build-angular:dev-server",
       "options": {
         "port": 4202
       },
       "configurations": {
         "production": {
-          "buildTarget": "mf-login:build:production"
+          "buildTarget": "mf-login:esbuild:production"
         },
         "development": {
-          "buildTarget": "mf-login:build:development"
+          "buildTarget": "mf-login:esbuild:development"
         }
       },
       "defaultConfiguration": "development"
-    },
-    "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
-      "options": {
-        "buildTarget": "mf-login:build"
-      }
     }
   }
 }
