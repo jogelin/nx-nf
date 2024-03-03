@@ -8,7 +8,7 @@ module.exports = withNativeFederation({
 
   exposes: {
     './routes': './apps/mf-account/src/app/app.routes.ts',
-    './Component': './apps/mf-account/src/app/app.component.ts',
+    './MFAccountAppComponent': './apps/mf-account/src/app/app.component.ts',
   },
 
   shared: {
