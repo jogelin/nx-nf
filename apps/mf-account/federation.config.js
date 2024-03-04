@@ -18,6 +18,8 @@ module.exports = withNativeFederation({
     }),
   },
 
+  sharedMappings: ['@nx-nf/nf-utils'],
+
   skip: [
     'rxjs/ajax',
     'rxjs/fetch',

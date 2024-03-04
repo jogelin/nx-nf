@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { loadRemoteModule } from '@angular-architects/native-federation';
+import { loadRemoteOverrideUtils } from '@nx-nf/nf-utils';
 
 export const appRoutes: Route[] = [
   {
@@ -10,19 +10,21 @@ export const appRoutes: Route[] = [
   {
     path: 'home',
     loadChildren: () =>
-      loadRemoteModule('mfHome', 'mfRoutes').then(({ appRoutes }) => appRoutes),
+      loadRemoteOverrideUtils('mfHome', 'mfRoutes').then(
+        ({ appRoutes }) => appRoutes
+      ),
   },
   {
     path: 'login',
     loadChildren: () =>
-      loadRemoteModule('mfLogin', 'mfRoutes').then(
+      loadRemoteOverrideUtils('mfLogin', 'mfRoutes').then(
         ({ appRoutes }) => appRoutes
       ),
   },
   {
     path: 'my-account',
     loadChildren: () =>
-      loadRemoteModule('mfAccount', 'mfRoutes').then(
+      loadRemoteOverrideUtils('mfAccount', 'mfRoutes').then(
         ({ appRoutes }) => appRoutes
       ),
   },

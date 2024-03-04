@@ -1,0 +1,28 @@
+diff --git a/src/plugin/index.js b/src/plugin/index.js
+index 69851ea8ef5a17e256be31dbd8181295c88222b2..77452e2300d1b26359fb5f76d6aede9d3b4a6fcc 100644
+--- a/src/plugin/index.js
++++ b/src/plugin/index.js
+@@ -37,7 +37,8 @@ const federation = (params) => {
+             const updated = `
+ <script type="esms-options">
+ {
+-"shimMode": true
++"shimMode": true,
++"mapOverrides": true
+ }
+ </script>
+ <script src="polyfills.js" type="module">
+diff --git a/src/utils/updateIndexHtml.js b/src/utils/updateIndexHtml.js
+index 3c057ccfe9affde64b13fd0599cd1077b641339d..59b05e86db25b6c3b999ff7396a3cf94c632648b 100644
+--- a/src/utils/updateIndexHtml.js
++++ b/src/utils/updateIndexHtml.js
+@@ -22,7 +22,8 @@ function updateScriptTags(indexContent, mainName, polyfillsName) {
+     const htmlFragment = `
+ <script type="esms-options">
+ {
+-  "shimMode": true
++  "shimMode": true,
++  "mapOverrides": true
+ }
+ </script>
+

@@ -1,0 +1,8 @@
+{
+  "name": "nf-utils",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/nf-utils/src",
+  "projectType": "library",
+  "targets": {},
+  "tags": []
+}
