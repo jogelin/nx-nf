@@ -10,19 +10,19 @@ export const appRoutes: Route[] = [
   {
     path: 'home',
     loadChildren: () =>
-      loadRemoteModule('mfHome', './routes').then(({ appRoutes }) => appRoutes),
+      loadRemoteModule('mfHome', 'mfRoutes').then(({ appRoutes }) => appRoutes),
   },
   {
     path: 'login',
     loadChildren: () =>
-      loadRemoteModule('mfLogin', './routes').then(
+      loadRemoteModule('mfLogin', 'mfRoutes').then(
         ({ appRoutes }) => appRoutes
       ),
   },
   {
     path: 'my-account',
     loadChildren: () =>
-      loadRemoteModule('mfAccount', './routes').then(
+      loadRemoteModule('mfAccount', 'mfRoutes').then(
         ({ appRoutes }) => appRoutes
       ),
   },

@@ -7,7 +7,7 @@ module.exports = withNativeFederation({
   name: 'mf-home',
 
   exposes: {
-    './routes': './apps/mf-home/src/app/app.routes.ts',
+    mfRoutes: './apps/mf-home/src/app/app.routes.ts',
   },
 
   shared: {
