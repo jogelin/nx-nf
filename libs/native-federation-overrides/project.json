@@ -1,0 +1,23 @@
+{
+  "name": "native-federation-overrides",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/native-federation-overrides/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/native-federation-overrides",
+        "main": "libs/native-federation-overrides/src/index.ts",
+        "tsConfig": "libs/native-federation-overrides/tsconfig.lib.json",
+        "assets": ["libs/native-federation-overrides/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs native-federation-overrides {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
+}

@@ -1,5 +1,5 @@
 import { initFederation } from '@angular-architects/native-federation';
-import { initFederationOverrides } from '@nx-nf/native-federation-overrides';
+import { initFederationOverrides } from 'native-federation-overrides';
 
 initFederation('/assets/federation.manifest.json')
   .then(() => initFederationOverrides())

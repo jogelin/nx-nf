@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-nf/native-federation-overrides": [
+      "native-federation-overrides": [
         "libs/native-federation-overrides/src/index.ts"
       ]
     }
