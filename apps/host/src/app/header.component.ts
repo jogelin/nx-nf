@@ -1,45 +1,35 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, Type } from '@angular/core';
+import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
+import { loadRemoteModule } from '@angular-architects/native-federation';
+import { NgComponentOutlet, NgIf } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterLink, RouterLinkActive, NgIf, NgComponentOutlet],
   selector: 'nx-nf-header',
   template: `
-    <nav class="relative flex w-full items-center justify-between bg-white py-2 shadow-sm shadow-neutral-700/10 lg:flex-wrap lg:justify-start">
-      <div class="flex w-full flex-wrap items-center justify-between px-6">
-        <div class="flex-grow basis-[100%] items-center lg:!flex lg:basis-auto">
-          <ul class="mr-auto lg:flex lg:flex-row">
-            <li>
-              <a
-                class="block py-2 pr-2 text-neutral-500 transition duration-150 ease-in-out hover:text-neutral-600 focus:text-neutral-600 disabled:text-black/30 [&.active]:text-black/80"
-                routerLink="/home"
-                routerLinkActive="active"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a
-                class="block py-2 pr-2 text-neutral-500 transition duration-150 ease-in-out hover:text-neutral-600 focus:text-neutral-600 disabled:text-black/30 lg:px-2 [&.active]:text-black/80"
-                routerLink="/admin"
-                routerLinkActive="active"
-                >Admin</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="my-1 flex items-center lg:my-0 lg:ml-auto">
-          <a
-            class="block py-2 pr-2 text-neutral-500 transition duration-150 ease-in-out hover:text-neutral-600 focus:text-neutral-600 disabled:text-black/30 lg:px-2 [&.active]:text-black/80"
-            routerLink="/login"
-            routerLinkActive="active"
-            >Login</a
-          >
-        </div>
+    <header class="flex w-full items-center justify-between p-2 border border-black">
+      <div class="flex-grow basis-[100%] items-center p-2">
+        <a class="pr-4 text-neutral-500 hover:text-neutral-600 focus:text-neutral-600 [&.active]:text-black/80" routerLink="/home" routerLinkActive="active"
+          >Home</a
+        >
+        <a class="text-neutral-500 hover:text-neutral-600 focus:text-neutral-600 [&.active]:text-black/80" routerLink="/admin" routerLinkActive="active"
+          >Admin</a
+        >
       </div>
-    </nav>
+      <div class="flex items-center bg-green-600 border border-black p-1">
+        <ng-container *ngIf="LoginMenuComponent">
+          <span class="text-white px-4 py-1 mr-6 bg-neutral-700 rounded">Parcel</span>
+          <div *ngComponentOutlet="LoginMenuComponent"></div>
+        </ng-container>
+      </div>
+    </header>
   `,
   styles: ``,
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  LoginMenuComponent?: Type<unknown>;
+  async ngOnInit() {
+    this.LoginMenuComponent = (await loadRemoteModule('mfLogin', 'loginMenuComponent')).LoginMenuComponent;
+  }
+}

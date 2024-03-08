@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
 
 @Component({
   standalone: true,
-  imports: [RouterModule],
-  selector: 'nx-nf-root',
-  template: ` <div class="border-4 border-primary border-dashed">Admin Micro Frontend</div> `,
+  imports: [],
+  selector: 'nx-nf-admin-root',
+  template: `
+    <div class="h-full text-center pt-24">
+      <div class="text-5xl font-bold">Welcome to Admin Page</div>
+    </div>
+  `,
   styles: ``,
 })
-export class AppComponent {
-  email = 'admin@nx-nf.com';
-  password = 'qwerty';
-}
+export class AppComponent {}

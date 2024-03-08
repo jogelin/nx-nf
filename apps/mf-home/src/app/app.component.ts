@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { HeroComponent } from './hero.component';
 
 @Component({
   standalone: true,
-  imports: [HeroComponent],
-  selector: 'nx-nf-root',
+  imports: [],
+  selector: 'nx-nf-home-root',
   template: `
-    <div class="border-4 border-primary border-dashed">
-      <nx-nf-hero></nx-nf-hero>
+    <div class="h-full text-center pt-24">
+      <div class="text-5xl font-bold">Welcome to Home Page</div>
     </div>
   `,
   styles: ``,
