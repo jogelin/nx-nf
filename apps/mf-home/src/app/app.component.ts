@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { HeroComponent } from './hero.component';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [HeroComponent],
   selector: 'nx-nf-root',
-  template: `<nx-nf-nx-welcome></nx-nf-nx-welcome>
-    <router-outlet></router-outlet>`,
+  template: `
+    <div class="border-4 border-primary border-dashed">
+      <nx-nf-hero></nx-nf-hero>
+    </div>
+  `,
   styles: ``,
 })
-export class AppComponent {
-  title = 'mf-home';
-}
+export class AppComponent {}

@@ -1,39 +1,20 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { HeaderComponent } from './header.component';
 
 @Component({
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, HeaderComponent],
   selector: 'nx-nf-root',
   template: `
-    <header class="bg-white">
-      <nav
-        class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
-        aria-label="Global"
-      >
-        <div class="hidden lg:flex lg:gap-x-12">
-          <a
-            routerLink="/home"
-            class="text-sm font-semibold leading-6 text-gray-900"
-            >Home</a
-          >
-          <a
-            routerLink="/my-account"
-            class="text-sm font-semibold leading-6 text-gray-900"
-            >My Account</a
-          >
-        </div>
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a
-            routerLink="/login"
-            class="text-sm font-semibold leading-6 text-gray-900"
-            >Log in <span aria-hidden="true">&rarr;</span></a
-          >
-        </div>
-      </nav>
-    </header>
-
-    <router-outlet></router-outlet>
+    <div
+      class="container mx-auto mt-1 divide-y-4 divide-black divide-dashed border-4 border-black border-dashed"
+    >
+      <nx-nf-header></nx-nf-header>
+      <div class="p-1">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
   `,
   styles: ``,
 })

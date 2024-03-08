@@ -1,5 +1,7 @@
 {
-	"mfAccount": "http://localhost:4203/remoteEntry.json",
-	"mfHome": "http://localhost:4201/remoteEntry.json",
-	"mfLogin": "http://localhost:4202/remoteEntry.json"
+  "imports": {
+    "mfAccount": "http://localhost:4203/remoteEntry.json",
+    "mfHome": "http://localhost:4201/remoteEntry.json",
+    "mfLogin": "http://localhost:4202/remoteEntry.json"
+  }
 }
