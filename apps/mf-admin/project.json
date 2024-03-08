@@ -1,5 +1,5 @@
 {
-  "name": "mf-account",
+  "name": "mf-admin",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "nx-nf",
@@ -11,10 +11,10 @@
       "options": {},
       "configurations": {
         "production": {
-          "target": "mf-account:esbuild:production"
+          "target": "mf-admin:esbuild:production"
         },
         "development": {
-          "target": "mf-account:esbuild:development",
+          "target": "mf-admin:esbuild:development",
           "dev": true
         }
       },
@@ -23,7 +23,7 @@
     "serve": {
       "executor": "@angular-architects/native-federation:build",
       "options": {
-        "target": "mf-account:serve-original:development",
+        "target": "mf-admin:serve-original:development",
         "rebuildDelay": 0,
         "dev": true,
         "port": 0
@@ -32,7 +32,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "mf-account:build"
+        "buildTarget": "mf-admin:build"
       }
     },
     "esbuild": {
@@ -80,10 +80,10 @@
       },
       "configurations": {
         "production": {
-          "buildTarget": "mf-account:esbuild:production"
+          "buildTarget": "mf-admin:esbuild:production"
         },
         "development": {
-          "buildTarget": "mf-account:esbuild:development"
+          "buildTarget": "mf-admin:esbuild:development"
         }
       },
       "defaultConfiguration": "development"

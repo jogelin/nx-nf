@@ -1,10 +1,10 @@
 const { withNativeFederation, shareAll } = require('@angular-architects/native-federation/config');
 
 module.exports = withNativeFederation({
-  name: 'mf-account',
+  name: 'mf-admin',
 
   exposes: {
-    mfRoutes: './apps/mf-account/src/app/app.routes.ts',
+    mfRoutes: './apps/mf-admin/src/app/app.routes.ts',
   },
 
   shared: {
