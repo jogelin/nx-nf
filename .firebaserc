@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "nx-nf-a2d7c"
+  },
+  "targets": {
+    "nx-nf-a2d7c": {
+      "hosting": {
+        "nx-nf-a2d7c": ["nx-nf-a2d7c"],
+        "nx-nf-mf-admin": ["nx-nf-mf-admin"],
+        "nx-nf-mf-home": ["nx-nf-mf-home"],
+        "nx-nf-mf-login": ["nx-nf-mf-login"]
+      }
+    }
+  }
+}
