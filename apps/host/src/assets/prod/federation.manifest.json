@@ -1,0 +1,5 @@
+{
+  "mfAdmin": "https://nx-nf-mf-admin.web.app/remoteEntry.json",
+  "mfHome": "https://nx-nf-mf-home.web.app/remoteEntry.json",
+  "mfLogin": "https://nx-nf-mf-login.web.app/remoteEntry.json"
+}
