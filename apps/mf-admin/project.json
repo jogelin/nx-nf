@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "nx-nf",
-  "sourceRoot": "apps/mf-account/src",
+  "sourceRoot": "apps/mf-admin/src",
   "tags": [],
   "targets": {
     "build": {
@@ -37,26 +37,16 @@
     },
     "esbuild": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/mf-account",
-        "index": "apps/mf-account/src/index.html",
-        "browser": "apps/mf-account/src/main.ts",
-        "polyfills": [
-          "zone.js",
-          "es-module-shims"
-        ],
-        "tsConfig": "apps/mf-account/tsconfig.app.json",
+        "outputPath": "dist/apps/mf-admin",
+        "index": "apps/mf-admin/src/index.html",
+        "browser": "apps/mf-admin/src/main.ts",
+        "polyfills": ["zone.js", "es-module-shims"],
+        "tsConfig": "apps/mf-admin/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/mf-account/src/favicon.ico",
-          "apps/mf-account/src/assets"
-        ],
-        "styles": [
-          "apps/mf-account/src/styles.scss"
-        ],
+        "assets": ["apps/mf-admin/src/favicon.ico", "apps/mf-admin/src/assets"],
+        "styles": ["apps/mf-admin/src/styles.scss"],
         "scripts": []
       },
       "configurations": {

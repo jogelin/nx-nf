@@ -6,9 +6,7 @@ import { RouterModule } from '@angular/router';
   imports: [RouterModule],
   selector: 'nx-nf-header',
   template: `
-    <nav
-      class="relative flex w-full items-center justify-between bg-white py-2 shadow-sm shadow-neutral-700/10 lg:flex-wrap lg:justify-start"
-    >
+    <nav class="relative flex w-full items-center justify-between bg-white py-2 shadow-sm shadow-neutral-700/10 lg:flex-wrap lg:justify-start">
       <div class="flex w-full flex-wrap items-center justify-between px-6">
         <div class="flex-grow basis-[100%] items-center lg:!flex lg:basis-auto">
           <ul class="mr-auto lg:flex lg:flex-row">
@@ -23,9 +21,9 @@ import { RouterModule } from '@angular/router';
             <li>
               <a
                 class="block py-2 pr-2 text-neutral-500 transition duration-150 ease-in-out hover:text-neutral-600 focus:text-neutral-600 disabled:text-black/30 lg:px-2 [&.active]:text-black/80"
-                routerLink="/my-account"
+                routerLink="/admin"
                 routerLinkActive="active"
-                >My Account</a
+                >Admin</a
               >
             </li>
           </ul>

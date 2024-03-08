@@ -9,21 +9,14 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'home',
-    loadChildren: () =>
-      loadRemoteModule('mfHome', 'mfRoutes').then(({ appRoutes }) => appRoutes),
+    loadChildren: () => loadRemoteModule('mfHome', 'mfRoutes').then(({ appRoutes }) => appRoutes),
   },
   {
     path: 'login',
-    loadChildren: () =>
-      loadRemoteModule('mfLogin', 'mfRoutes').then(
-        ({ appRoutes }) => appRoutes
-      ),
+    loadChildren: () => loadRemoteModule('mfLogin', 'mfRoutes').then(({ appRoutes }) => appRoutes),
   },
   {
-    path: 'my-account',
-    loadChildren: () =>
-      loadRemoteModule('mfAccount', 'mfRoutes').then(
-        ({ appRoutes }) => appRoutes
-      ),
+    path: 'admin',
+    loadChildren: () => loadRemoteModule('mfAdmin', 'mfRoutes').then(({ appRoutes }) => appRoutes),
   },
 ];
