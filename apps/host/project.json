@@ -37,26 +37,16 @@
     },
     "esbuild": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/host",
         "index": "apps/host/src/index.html",
         "browser": "apps/host/src/main.ts",
-        "polyfills": [
-          "zone.js",
-          "es-module-shims"
-        ],
+        "polyfills": ["zone.js", "es-module-shims"],
         "tsConfig": "apps/host/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/host/src/favicon.ico",
-          "apps/host/src/assets"
-        ],
-        "styles": [
-          "apps/host/src/styles.scss"
-        ],
+        "assets": ["apps/host/src/favicon.ico"],
+        "styles": ["apps/host/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -73,12 +63,26 @@
               "maximumError": "4kb"
             }
           ],
-          "outputHashing": "all"
+          "outputHashing": "all",
+          "assets": [
+            {
+              "input": "apps/host/src/assets/prod",
+              "output": "assets/",
+              "glob": "*.json"
+            }
+          ]
         },
         "development": {
           "optimization": false,
           "extractLicenses": false,
-          "sourceMap": true
+          "sourceMap": true,
+          "assets": [
+            {
+              "input": "apps/host/src/assets",
+              "output": "assets/",
+              "glob": "*.json"
+            }
+          ]
         }
       },
       "defaultConfiguration": "production"
