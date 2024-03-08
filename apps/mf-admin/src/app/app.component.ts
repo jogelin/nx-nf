@@ -5,11 +5,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule],
   selector: 'nx-nf-root',
-  template: `
-    <div class="border-4 border-primary border-dashed">
-      <nx-nf-hero></nx-nf-hero>
-    </div>
-  `,
+  template: ` <div class="border-4 border-primary border-dashed">Admin Micro Frontend</div> `,
   styles: ``,
 })
 export class AppComponent {
