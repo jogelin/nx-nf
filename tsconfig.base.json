@@ -15,9 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "native-federation-overrides": [
-        "libs/native-federation-overrides/src/index.ts"
-      ]
+      "native-federation-overrides": ["libs/native-federation-overrides/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
