@@ -58,5 +58,7 @@ export default defineConfig({
       reportsDirectory: '../../coverage/libs/native-federation-overrides',
       provider: 'v8',
     },
+
+    passWithNoTests: true,
   },
 });

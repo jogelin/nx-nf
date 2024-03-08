@@ -1,7 +1,9 @@
 {
   "name": "native-federation-overrides",
   "version": "0.0.1",
-  "dependencies": {},
+  "dependencies": {
+    "@angular-architects/native-federation": "^17.1.6"
+  },
   "main": "./index.js",
   "module": "./index.mjs",
   "typings": "./index.d.ts"
