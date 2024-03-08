@@ -17,9 +17,9 @@ import { NgComponentOutlet, NgIf } from '@angular/common';
           >Admin</a
         >
       </div>
-      <div class="flex items-center bg-green-600 border border-black p-1">
+      <div class="flex items-center bg-green-600 border border-black py-0.5 px-2">
         <ng-container *ngIf="LoginMenuComponent">
-          <span class="text-white px-4 py-1 mr-6 bg-neutral-700 rounded">Parcel</span>
+          <span class="text-white px-4 py-1 mr-6 bg-neutral-800 rounded">Parcel</span>
           <div *ngComponentOutlet="LoginMenuComponent"></div>
         </ng-container>
       </div>
