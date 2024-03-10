@@ -5,7 +5,7 @@
   "scripts": {},
   "private": true,
   "devDependencies": {
-    "@angular-architects/native-federation": "^17.1.6",
+    "@angular-architects/native-federation": "17.1.7",
     "@angular-devkit/build-angular": "~17.1.0",
     "@angular-devkit/core": "~17.1.0",
     "@angular-devkit/schematics": "~17.1.0",
